@@ -3,17 +3,35 @@
 {% block title %} Añadir Eventos {% endblock title%}
 
 {% block content %}
-{{request.user}}
-<h1 class="text-center">Añadir Eventos</h1>
+
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center display-4 py-5">Añadir Eventos</h1>
+            <ul class="list-group">
+
   
-    <form action="/eventos/create/" method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
+                <form action="/eventos/create/" method="POST" class="card-body">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">
+                            Guardar
+                        </button>
+                
+                    </div>
+                    
+                </form>
+            
+            </ul>
+        </div>
+    </div>
+    {% endblock %} 
+</main>
 
-        <button type="submit" class="btn btn-primary">
-            Guardar
-        </button>
 
-    </form>
 
-{% endblock %} 
+
+
