@@ -6,5 +6,5 @@ class EventoAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(T_Eventos, EventoAdmin) 
-admin.site.register(T_Participantes) 
+admin.site.register(T_Eventos, EventoAdmin)
+admin.site.register(T_Participantes)
