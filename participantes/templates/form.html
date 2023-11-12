@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Añadir Eventos {% endblock title%}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center display-4 py-5"> Registro de participantes </h1>
+            <ul class="list-group">
+
+  
+                <form action="" method="POST" class="card-body">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">
+                            Registrar
+                        </button>
+                
+                    </div>
+                    
+                </form>
+            
+            </ul>
+        </div>
+    </div>
+   {% endblock %} 
+</main>
