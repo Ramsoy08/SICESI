@@ -3,6 +3,9 @@ from .models import T_Eventos, T_Participantes
 
 class EventoAdmin(admin.ModelAdmin):
     readonly_fields = ("fecha_creacion", )
+    
+class ParticipanteAdmin(admin.ModelAdmin):
+    readonly_fields = ("fecha_creacion", )    
 
 
 # Register your models here.

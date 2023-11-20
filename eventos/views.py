@@ -11,12 +11,12 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'main/home.html')
 
 def signup(request):
     
     if request.method == 'GET':
-        return render(request, 'signup.html',{
+        return render(request, 'register/signup.html',{
             'form': UserCreationForm
         })   
     else:
@@ -28,11 +28,11 @@ def signup(request):
                 login(request, user)
                 return redirect(eventos)
             except:
-                return render(request, 'signup.html', {
+                return render(request, 'register/signup.html', {
                     'form': UserCreationForm,
                     "error": 'El usuario ya existe'
                 })  
-    return render(request, 'signup.html',{
+    return render(request, 'register/signup.html',{
         'form': UserCreationForm,
         "error": 'Las contraseñas no coinciden'
     })  
@@ -41,13 +41,13 @@ def signup(request):
 def eventos(request):
     eventos = T_Eventos.objects.filter(user=request.user, fecha_culminado__isnull=True)
     if request.method == 'GET':
-        return render(request, 'eventos.html', {'eventos': eventos})
+        return render(request, 'main/eventos.html', {'eventos': eventos})
 
 @login_required    
 def eventos_completados (request):
     eventos = T_Eventos.objects.filter(user=request.user, fecha_culminado__isnull=False).order_by('-fecha_culminado')
     if request.method == 'GET':
-        return render(request, 'eventos.html', {'eventos': eventos})    
+        return render(request, 'main/eventos.html', {'eventos': eventos})    
 
 @login_required 
 def create_evento(request):
@@ -60,14 +60,14 @@ def create_evento(request):
             return HttpResponse("La data ha sido guardada en la base de datos")
     else: 
         form = EventosForm()
-    return render (request, 'create_eventos.html', {'form': form})
+    return render (request, 'main/create_eventos.html', {'form': form})
 
 @login_required 
 def evento_detail(request, evento_id):
     if request.method == 'GET':
         evento = get_object_or_404(T_Eventos, pk=evento_id, user=request.user)
         form = EventosForm(instance=evento)
-        return render(request, 'evento_detail.html', {'evento': evento, 'form': form})
+        return render(request, 'main/evento_detail.html', {'evento': evento, 'form': form})
     else:
         try:
             evento = get_object_or_404(T_Eventos, pk=evento_id, user=request.user)      
@@ -75,7 +75,7 @@ def evento_detail(request, evento_id):
             form.save()
             return redirect('eventos')
         except ValueError:
-            return render(request, 'evento_detail.html', {'evento': evento, 'form': form, 'error':"Ups! Algo salió mal actualizando los datos"})
+            return render(request, 'main/evento_detail.html', {'evento': evento, 'form': form, 'error':"Ups! Algo salió mal actualizando los datos"})
 
 @login_required 
 def evento_completado(request, evento_id):
@@ -99,13 +99,13 @@ def signout(request):
 
 def signin(request):
     if request.method =='GET':
-        return render(request, 'signin.html', {
+        return render(request, 'register/signin.html', {
             'form': AuthenticationForm
         })
     else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
-            return render(request, 'signin.html', {
+            return render(request, 'register/signin.html', {
                 'form': AuthenticationForm,
                 'error': 'El nombre de usuario es incorrecto'
             })    

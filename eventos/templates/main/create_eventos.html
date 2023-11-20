@@ -4,20 +4,21 @@
 
 {% block content %}
 
+
 <main class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h1 class="text-center display-4 py-5"> Registro de participantes </h1>
+            <h1 class="text-center display-4 py-5">Añadir Eventos</h1>
             <ul class="list-group">
 
   
-                <form action="/participantes/create/" method="POST" class="card-body">
+                <form action="/eventos/create/" method="POST" class="card-body">
                     {% csrf_token %}
                     {{form.as_p}}
                     
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">
-                            Registrar
+                            Guardar
                         </button>
                 
                     </div>
@@ -27,5 +28,10 @@
             </ul>
         </div>
     </div>
-   {% endblock %} 
+    {% endblock %} 
 </main>
+
+
+
+
+
