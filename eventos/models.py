@@ -22,7 +22,7 @@ class T_Eventos(models.Model):
     
     def __str__ (self):
         return self.titulo
-
+    
 class T_Participantes(models.Model):
     nacionalidad_choices = [
         ("Afgano / Afgana", "Afgano / Afgana"),
@@ -197,5 +197,4 @@ class T_Participantes(models.Model):
 
     
     def __str__ (self):
-        return self.nombres
-
+        return self.nombres    

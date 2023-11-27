@@ -4,7 +4,6 @@ from .models import T_Eventos
 
 class EventosForm(forms.ModelForm):
     #tipo CharField
-    
     titulo = forms.CharField(
         max_length=500,
         label="Titulo Del Evento",

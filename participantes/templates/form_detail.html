@@ -1,34 +1,42 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-
-    <h1 class="text-center">Datos del Participante</h1>
-    <h2>{{participante.nombres}} {{participante.apellidos}}</h2>
-
+    <div class="offset-md-4">
+        <h1>Datos del Participante
+        <b>{{participante.nombres}} {{participante.apellidos}}</b></h1>
+    </div>
     {{error}}
+    <br>
     
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary">
-                Modificar Datos
-            </button>    
-        </div>
-        
+    <main class="container">
+        <div class="row">
+            <div class="col-md-5 offset-md-5">
+                <ul class="list-group">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success">
+                                Modificar Datos
+                            </button>    
+                        </div>
+                        
 
-    </form>
+                    </form>
 
-    <form action="{% url 'participante_eliminado' participante.id %}" method="post">  
-        {% csrf_token %}
+                    <form action="{% url 'participante_eliminado' participante.id %}" method="post">  
+                        {% csrf_token %}
 
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary">
-                Eliminar Participante
-            </button>
-        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-danger">
+                                Eliminar Participante
+                            </button>
+                        </div>
 
-    </form>
-    
+                    </form>
+                </ul>
+            </div>
+        </div>            
+    </main>
 {% endblock %}

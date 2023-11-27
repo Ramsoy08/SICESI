@@ -8,10 +8,10 @@ from .forms import EventosForm
 from .models import T_Eventos
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-
+from django.contrib import messages
 
 def home(request):
-    return render(request, 'main/home.html')
+    return render(request, 'register/main.html')
 
 def signup(request):
     
@@ -57,7 +57,8 @@ def create_evento(request):
             new_evento = form.save(commit=False)
             new_evento.user = request.user
             new_evento.save()
-            return HttpResponse("La data ha sido guardada en la base de datos")
+            messages.success(request, "El evento se ha guardado correctamente")            
+            return redirect('eventos')
     else: 
         form = EventosForm()
     return render (request, 'main/create_eventos.html', {'form': form})
@@ -73,6 +74,7 @@ def evento_detail(request, evento_id):
             evento = get_object_or_404(T_Eventos, pk=evento_id, user=request.user)      
             form = EventosForm(request.POST, instance=evento)
             form.save()
+            messages.success(request, "El evento se ha editado correctamente")
             return redirect('eventos')
         except ValueError:
             return render(request, 'main/evento_detail.html', {'evento': evento, 'form': form, 'error':"Ups! Algo salió mal actualizando los datos"})
@@ -83,6 +85,7 @@ def evento_completado(request, evento_id):
     if request.method == 'POST':
             evento.fecha_culminado = timezone.now()
             evento.save()
+            messages.success(request, "El evento ha sido marcado como completado")
             return redirect('eventos')
         
 @login_required    
@@ -90,6 +93,7 @@ def evento_eliminado(request, evento_id):
     evento = get_object_or_404(T_Eventos, pk=evento_id, user=request.user)
     if request.method == 'POST':
             evento.delete()
+            messages.success(request, "El evento ha sido eliminado")            
             return redirect('eventos')
                 
 @login_required         

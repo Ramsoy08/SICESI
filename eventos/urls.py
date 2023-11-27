@@ -14,6 +14,5 @@ urlpatterns = [
     path('eventos/<int:evento_id>/delete', views.evento_eliminado, name='evento_eliminado'),
     path('logout/', views.signout, name='logout'),
     path('signin/', views.signin, name='signin'),
-
     
 ]

@@ -21,7 +21,8 @@ from participantes import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('eventos.urls')),
-    path('', include('participantes.urls')),
-    
+    path('', include('graficas.urls')),
+    path ('', include('eventos.urls')),
+    path ('', include('participantes.urls')),
+
 ]
