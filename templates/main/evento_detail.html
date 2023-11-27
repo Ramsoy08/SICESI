@@ -1,0 +1,51 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class="text-center">
+    <h1>Detalles del evento <b>{{evento.titulo}}</b></h1> 
+</div>
+{{error}}
+<br>
+    
+<main class="container">
+    <div class="row">
+        <div class="col-md-2 offset-md-3"></div> 
+            <ul class="list-group">
+                <form method="post">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">
+                            Actualizar
+                        </button>    
+                    </div>
+                </form>    
+
+                <form action="{% url 'evento_completado' evento.id %}" method="post">  
+                    {% csrf_token %}
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">
+                            Evento Completado
+                        </button>
+                    </div>
+            
+                </form>
+            
+                <form action="{% url 'evento_eliminado' evento.id %}" method="post">  
+                    {% csrf_token %}
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">
+                            Eliminar Evento
+                        </button>
+                    </div>
+                </form>
+            </ul>    
+        </div>    
+    </div>     
+</main>
+    
+{% endblock %}
