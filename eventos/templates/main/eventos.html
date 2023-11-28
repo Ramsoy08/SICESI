@@ -1,6 +1,30 @@
 {% extends 'main/base.html' %}
+<!-- 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 -->
+{% block js %}
+<script>
+    function eliminarEvento(id) {
+        Swal.fire({
+            "title":"¿Estás Seguro de Eliminar este registro?",
+            "text":"Esta acción no se puede deshacer",
+            "icon":"warning",
+            "showCancelButton":true,
+            "cancelButtonText":"Cancelar",
+            "confirmButtonText":"Eliminar",
+            "reverseButtons":true,
+            "confirmBottonColor":"darkred"
+        })
+        .then(function(result){
+            if(result.isConfirmed){
+                window.location.href="/evento_eliminado/"+id+"/"
+            }
+        })
+    }
+</script>
 
+
+{% endblock %}
 {% block content %}
+
 <main class="container">
     <div class="row">
         <div class="col-md-9 offset-md-3">
@@ -8,13 +32,14 @@
             <div class="card">
                 <div class="card-body">
 
-                    <table class="table table-hover table-responsive-sm">
+                    <table id="example" class="table table-hover table-responsive-sm">
                         <tr class="table-warning">
                             <th>Nombre del evento</th>
                             <th>Detalles del evento</th>
                             <th>Fecha del evento</th>
                             <th>Culminado</th>
                             <th>Creado</th>
+                            <th>Opciones</th>
                         </tr>
                                 
                         {% for evento in eventos %}
@@ -31,6 +56,10 @@
                                     {% endif %}
                             </td>
                             <td>{{evento.user}}</td>
+                            <td>
+                                <a href="{% url 'evento_detail' evento.id %}" class="btn btn-primary btn-sm">Modificar</a>
+                                <a href="#" onclick="eliminarEvento({{evento.id}})" class="btn btn-danger btn-sm">Eliminar</a>
+                            </td>
                         </tr>
 
                             {% endfor %}

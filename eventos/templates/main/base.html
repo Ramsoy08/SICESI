@@ -40,9 +40,9 @@
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0; font-size: 10px;">
-              <a href="#" class="site_title" style="font-size: 15px;"><i class="fa fa-bookmark"></i> <span>II Congreso Mundial</span></a>
+          <div class="bg-white">
+            <div class="navbar bg-info" style="border: 0; font-size: 10px;">
+              <a href="#" class="text-dark" style="font-size: 15px;"><i class="fa fa-bookmark"></i> <span>II Congreso Mundial</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -50,11 +50,11 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="{% static '/FrWork/admin_lte/build/images/img.jpg' %}" rel="stylesheet" alt="..." class="img-circle profile_img">
+                <img src="https://elsistema.org.ve/wp-content/uploads/2020/02/NI-COLOR-H.png" rel="stylesheet" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Bienvenido</span>
-                <h2>Sistema "SICESI"</h2>
+                <span class="text-dark">Bienvenido</span>
+                <h2 class="text-dark">Sistema "SICESI"</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -62,41 +62,41 @@
             <br/>
 
             <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div id="sidebar-menu" class="bg-black">
               <div class="menu_section">
-                <h3>General</h3>
+                <h3 class="text-dark">General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="/"><i class="fa fa-home"></i> Inicio</a>
+                  <li><a href="/" class="text-dark"><i class="fa fa-home"></i> Inicio</a>
                   </li>
                   {% if user.is_authenticated %}
-                  <li><a><i class="fa fa-list"></i> Eventos <span class="fa fa-chevron-down"></span></a>
+                  <li><a class="text-dark"><i class="fa fa-list"></i> Eventos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/eventos/create">Añadir Evento</a></li>
-                      <li><a href="/eventos">Eventos Pendientes</a></li>
-                      <li><a href="/eventos_completados">Eventos Culminados</a></li>
+                      <li><a href="/eventos/create" class="text-dark">Añadir Evento</a></li>
+                      <li><a href="/eventos" class="text-dark">Eventos Pendientes</a></li>
+                      <li><a href="/eventos_completados" class="text-dark">Eventos Culminados</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Participantes <span class="fa fa-chevron-down"></span></a>
+                  <li><a class="text-dark"><i class="fa fa-table"></i> Participantes <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/participantes/create">Registro de Participantes</a></li>
-                      <li><a href="/participantes/lparticipantes">Lista de Participantes</a></li>
+                      <li><a href="/participantes/create" class="text-dark">Registro de Participantes</a></li>
+                      <li><a href="/participantes/lparticipantes" class="text-dark">Lista de Participantes</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-desktop"></i> Presentación de Data <span class="fa fa-chevron-down"></span></a>
+                  <li><a class="text-dark"><i class="fa fa-desktop"></i> Presentación de Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Tablas Eventos</a></li>
-                      <li><a href="#">Tablas Participantes</a></li>
+                      <li><a href="#" class="text-dark">Tablas Eventos</a></li>
+                      <li><a href="#" class="text-dark">Tablas Participantes</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i> Estadisticas de Data <span class="fa fa-chevron-down"></span></a>
+                  <li><a class="text-dark"><i class="fa fa-bar-chart-o"></i> Estadisticas de Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/grafica_eventos">Estadisticas Eventos</a></li>
-                      <li><a href="#">Estadisticas Participantes</a></li>
+                      <li><a href="/grafica_eventos" class="text-dark">Estadisticas Eventos</a></li>
+                      <li><a href="#" class="text-dark">Estadisticas Participantes</a></li>
                     </ul>
                   </li>
                   {% else %}
                   <li><a><i class="fa fa-laptop"></i> Opciones <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
+                    <ul class="nav child_menu bg-white">
                       <li><a href="/signup">Sign Up</a></li>
                       <li><a href="/signin">Sign In</a></li>
                     </ul>
@@ -148,9 +148,9 @@
 
 
         <!-- footer content -->
-        <footer>
+        <footer class="bg-info">
           <div class="pull-left">
-            <tt>SICESI</tt> - Desarrolladores: Ferrer Ignasly | Simanca Yosmar | Avariano Perliandrys | Alejos Paul |<a href="https://elsistema.org.ve"> ¿Qué es el Sistema?</a>
+            <tt>SICESI</tt> - Desarrolladores: Ferrer Ignasly | Simanca Yosmar | Avariano Perliandrys | Alejos Paul |<a href="https://elsistema.org.ve" class="text-dark"> ¿Qué es el Sistema?</a>
           </div>
           <div class="clearfix"></div>
         </footer>

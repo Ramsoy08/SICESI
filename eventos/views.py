@@ -91,10 +91,9 @@ def evento_completado(request, evento_id):
 @login_required    
 def evento_eliminado(request, evento_id):
     evento = get_object_or_404(T_Eventos, pk=evento_id, user=request.user)
-    if request.method == 'POST':
-            evento.delete()
-            messages.success(request, "El evento ha sido eliminado")            
-            return redirect('eventos')
+    evento.delete()
+    messages.success(request, "El evento ha sido eliminado")            
+    return redirect('eventos')
                 
 @login_required         
 def signout(request):
