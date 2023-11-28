@@ -1,6 +1,16 @@
 {% extends 'main/base.html' %}
 
+{% block js %}
+<script>
+    function eliminarEvento(id){
+        console.log(id)
+    }
+</script>
+
+{% endblock %}
+
 {% block content %}
+
 
 <div class="text-center">
     <h1>Detalles del evento <b>{{evento.titulo}}</b></h1> 

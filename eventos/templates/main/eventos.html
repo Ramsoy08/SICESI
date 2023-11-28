@@ -1,8 +1,49 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+<main class="container">
+    <div class="row">
+        <div class="col-md-9 offset-md-3">
+            <h1 class="text-center display-4 py-3">Eventos Pendientes</h1>
+            <div class="card">
+                <div class="card-body">
 
-<div class="row">
+                    <table class="table table-hover table-responsive-sm">
+                        <tr class="table-warning">
+                            <th>Nombre del evento</th>
+                            <th>Detalles del evento</th>
+                            <th>Fecha del evento</th>
+                            <th>Culminado</th>
+                            <th>Creado</th>
+                        </tr>
+                                
+                        {% for evento in eventos %}
+
+                        <tr>
+                            <td>{{evento.titulo}}</td>
+                            <td>{{evento.contenido}}</td>
+                            <td>{{evento.fecha_evento}}</td>
+                            <td>
+                                {% if evento.fecha_completado %}
+                                Completado 
+                                    {% else %}
+                                    No se ha completado 
+                                    {% endif %}
+                            </td>
+                            <td>{{evento.user}}</td>
+                        </tr>
+
+                            {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<!-- <div class="row">
     <div class="col-md-6 offset-md-3">
         <h1 class="text-center display-4 py-5">Eventos</h1>
         <ul class="list-group">
@@ -23,6 +64,6 @@
             {% endfor %}
         </ul>
     </div>
-</div>
+</div> -->
 
 {% endblock %}

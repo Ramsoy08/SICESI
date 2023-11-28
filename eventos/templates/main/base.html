@@ -11,6 +11,8 @@
 
     <title>| II Congreso Mundial del Sistema |</title>
 
+
+
     <!-- Bootstrap -->
     <link href="{% static '/FrWork/admin_lte/vendors/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Font Awesome -->
@@ -31,13 +33,8 @@
     <link href="{% static '/FrWork/admin_lte/build/css/custom.min.css' %}" rel="stylesheet">
   </head>
 
-  <div id="contenido">
-    {% if messages %}
-      {% for m in messages %}
-        {{m}}
-      {% endfor %}
-    {% endif%}
-  </div>
+  <!-- <div id="contenido">
+  </div> -->
 
   <body class="nav-md">
     <div class="container body">
@@ -198,9 +195,36 @@
     <!-- bootstrap-daterangepicker -->
     <script src="{% static '/FrWork/admin_lte/vendors/moment/min/moment.min.js' %}"></script>
     <script src="{% static '/FrWork/admin_lte/vendors/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
-
+    <!-- Sweet Alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% if messages %}
+     {% for m in messages %}
+      <script>
+        Swal.fire({
+          "title": "Felicitaciones",
+          "text": "{{m}}",
+          "icon":"success"
+        })
+      </script>
+     {% endfor %}
+    {% endif%}
     <!-- Custom Theme Scripts -->
     <script src="{% static '/FrWork/admin_lte/build/js/custom.min.js' %}"></script>
+
+    {% if messages %}
+     {% for m in messages %}
+      <script>
+        Swal.fire({
+          "title": "Felicitaciones",
+          "text": "{{m}}",
+          "icon":"success"
+        })
+      </script>
+     {% endfor %}
+    {% endif%}
+    {% block js %}
+    {% endblock %}  
+
 	
   </body>
 </html>

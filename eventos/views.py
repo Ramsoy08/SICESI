@@ -47,7 +47,7 @@ def eventos(request):
 def eventos_completados (request):
     eventos = T_Eventos.objects.filter(user=request.user, fecha_culminado__isnull=False).order_by('-fecha_culminado')
     if request.method == 'GET':
-        return render(request, 'main/eventos.html', {'eventos': eventos})    
+        return render(request, 'main/eventos_completados.html', {'eventos': eventos})    
 
 @login_required 
 def create_evento(request):

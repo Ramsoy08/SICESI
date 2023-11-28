@@ -2,30 +2,33 @@
 
 {% block content %}
 
+<div class="card">
+    <div class="card-body">
+        <h2>Eventos</h2>
+        <hr>
+        <table class="table table-striped table-hover table-responsive-sm">
+            <tr>
+                <th>Nombre del evento</th>
+                <th>Detalles del evento</th>
+                <th>Fecha del evento</th>
+                <th>Culminado</th>
+                <th>Creado</th>
+            </tr>
 
-<main class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h1 class="text-center display-4 py-5">Eventos Culminados</h1>
-            <ul class="list-group">
-                {% for evento in eventos %}
+            {% for evento in eventos %}
 
-                <a class="list-group-item" href="{% url 'evento_detail' evento.id %}">
-                    <header class="d-flex justify-content-between">
-                        <h1 >{{evento.titulo}}</h1>
-                        <p>{{evento.user}}</p>
-                        <p>{{evento.contenido}}</p>
-                        <p>{{evento.fecha_evento}}</p>
-                    </header>
-                        
-                        <p>{{evento.fecha_culminado|date:'M j Y:i'}}</p>
-            
-                </a>
-            
-                {% endfor %}
-            </ul>
-        </div>
+            <tr>
+                <td>{{evento.titulo}}</td>
+                <td>{{evento.contenido}}</td>
+                <td>{{evento.fecha_evento}}</td>
+                <td>{{evento.fecha_culminado}}</td>
+                <td>{{evento.user}}</td>
+            </tr>
+
+            {% endfor %}
+        </table>
     </div>
-</main>
+</div>
+
 
 {% endblock %}
