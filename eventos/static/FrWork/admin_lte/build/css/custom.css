@@ -802,7 +802,7 @@
   content: "\e260"; }
 
 .left_col {
-  background: #5A738E; }
+  background: #0dcaf0; }
 
 .container {
   width: 100%;
@@ -938,11 +938,11 @@
 .profile_info span {
   font-size: 13px;
   line-height: 30px;
-  color: #FFFFFF; }
+  color: #000000; }
 
 .profile_info h2 {
   font-size: 14px;
-  color: #FFFFFF;
+  color: #000000;
   margin: 0;
   font-weight: 300; }
 
@@ -968,7 +968,7 @@
   margin-top: 5px;
   font-size: 10px;
   min-width: inherit;
-  color: #fff; }
+  color: #000000; }
 
 .active a span.fa {
   text-align: right !important;
@@ -1031,7 +1031,7 @@ body .container.body .right_col {
 .nav_title {
   width: 230px;
   float: left;
-  background: #5A738E;
+  background: #0d6efd;
   border-radius: 0;
   height: 57px;
   padding: 0px; }
@@ -1268,7 +1268,7 @@ a:hover, a:focus {
   margin-bottom: 0; }
 
 .navbar-header {
-  background: #5A738E; }
+  background: #0d6efd; }
 
 .navbar-right {
   margin-right: 0; }
@@ -1324,7 +1324,7 @@ a:hover, a:focus {
   margin-bottom: 6px; }
 
 .nav.side-menu > li > a:hover {
-  color: #F2F5F7 !important; }
+  color: #5A738E !important; }
 
 .nav.side-menu > li > a:hover, .nav > li > a:focus {
   text-decoration: none;
@@ -1335,7 +1335,7 @@ a:hover, a:focus {
 
 .nav.child_menu li:hover,
 .nav.child_menu li.active {
-  background-color: rgba(255, 255, 255, 0.06); }
+  background-color: #00aeef; }
 
 .nav.child_menu li {
   padding-left: 36px; }
@@ -1365,7 +1365,7 @@ a:hover, a:focus {
   bottom: 50%; }
 
 .nav.side-menu > li > a, .nav.child_menu > li > a {
-  color: #E7E7E7;
+  color: #000000;
   font-weight: 500; }
 
 .nav.child_menu li li:hover,
@@ -1374,7 +1374,7 @@ a:hover, a:focus {
 
 .nav.child_menu li li a:hover,
 .nav.child_menu li li a.active {
-  color: #fff; }
+  color: #0000; }
 
 .nav > li > a {
   position: relative;
@@ -1473,7 +1473,7 @@ a:hover, a:focus {
   font-size: 26px; }
 
 .nav.child_menu > li > a {
-  color: rgba(255, 255, 255, 0.75);
+  color: #000000;
   font-size: 12px;
   padding: 9px; }
 
@@ -1978,7 +1978,7 @@ table.display thead th:active, table.display thead td:active {
   clear: both; }
 
 .dataTables_scrollBody {
-  *margin-top: -1px;
+  margin-top: -1px;
   -webkit-overflow-scrolling: touch; }
 
 .top .dataTables_info {
@@ -2249,7 +2249,7 @@ span.right {
   padding: 5px 0 0 0;
   position: fixed;
   width: 230px;
-  background: #5A738E; }
+  background: blue; }
 
 .sidebar-footer a {
   padding: 7px 0 3px;
@@ -2258,7 +2258,7 @@ span.right {
   font-size: 17px;
   display: block;
   float: left;
-  background: #5A738E; }
+  background: lightblue; }
 
 .sidebar-footer a:hover {
   background: #eb300f; }
@@ -2291,7 +2291,7 @@ span.right {
   position: absolute;
   left: 0;
   height: 65px;
-  border-left: 2px solid #ADB2B5;
+  border-left: 2px solid #5b6266;
   margin-top: 10px; }
 
 @media (min-width: 992px) {
